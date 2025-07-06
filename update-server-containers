@@ -4,10 +4,15 @@
 docker container prune -f
 docker image prune -af
 
+# Pull the latest images for all containers wgere we currenly have a `:latest` tag
+# This assumes that the images are tagged with `:latest` and that you want to update
+# them to the latest version available in the Docker registry.
 docker images --format "{{.Repository}}:{{.Tag}}" | grep ':latest' | while read -r image; do
     docker pull "$image"
 done
 
+# Update the system packages
+# This will update the package lists and upgrade all installed packages to their latest versions.
 apt update
 apt upgrade -y
 

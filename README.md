@@ -9,9 +9,11 @@ use a specific tag
 
 It cleans up/prunes old containers and images
 
-I also updates the machine it runs on (apt) and reboots the machine.
+I also updates the machine it runs on (apt update/upgrade) .
 
-I use this to keep my docker based servers up to date.
+I use this to keep my docker based servers up to date.  Use at own risk. You may want to control
+the version of the containers more explicitly.
+
 
 
 
