@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Remove unused Docker images and containers
+docker container prune -f
+docker image prune -af
+
+docker images --format "{{.Repository}}:{{.Tag}}" | grep ':latest' | while read -r image; do
+    docker pull "$image"
+done
+
+
+
+
