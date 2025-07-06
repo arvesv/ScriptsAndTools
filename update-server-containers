@@ -8,6 +8,8 @@ docker images --format "{{.Repository}}:{{.Tag}}" | grep ':latest' | while read 
     docker pull "$image"
 done
 
+apt update
+apt upgrade -y
 
 
 
